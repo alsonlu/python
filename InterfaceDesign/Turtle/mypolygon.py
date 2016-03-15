@@ -27,6 +27,7 @@ comment
 
 
 def circle(t, r):
+    # Draws a circle
     for i in range(100):
         t.fd(5)
         t.lt(360 / 100)
