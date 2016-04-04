@@ -4,3 +4,5 @@ second = ' is large'
 print(first + second)
 # PythonPythonPython
 print(first*3)
+
+print(first + "3")
