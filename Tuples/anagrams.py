@@ -7,13 +7,17 @@ for line in fin:
     tuple_list = tuple(char_list)
     tuple_dict.setdefault(tuple_list, []).append(line.strip('\n'))
 
-keys_to_remove = []
+tuple_list = []
+for value in tuple_dict.values():
+    if len(value) == 1:
+        tuple_list.append((len(value), value))
+
+possible_bingos = []
 for key in tuple_dict:
-    if len(tuple_dict[key]) == 1:
-        keys_to_remove.append(key)
+    if len(key) == 8:
+        possible_bingos.append((len(tuple_dict[key]), tuple_dict[key]))
 
-for key_to_remove in keys_to_remove:
-    tuple_dict.pop(key_to_remove)
-
-print(tuple_dict)
-
+tuple_list.sort(reverse=True)
+possible_bingos.sort(reverse=True)
+print(possible_bingos)
+print(tuple_list)
