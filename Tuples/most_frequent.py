@@ -1,3 +1,6 @@
+import random
+
+
 def make_histogram(input_string):
     hist = dict()
     for character in input_string:
@@ -13,5 +16,20 @@ def sort_by_desc(input_string):
     tuple_list.sort(reverse=True)
     print(tuple_list)
 
+
+hist = make_histogram('aab')
+i = 0
+prob_dict = dict()
+word_list = []
+for key in hist.keys():
+    if hist[key] not in word_list:
+        word_list.extend(hist[key] * key)
+
+while i < 100:
+    choice = random.choice(word_list)
+    prob_dict[choice] = prob_dict.setdefault(choice, 1) + 1
+    i += 1
+
+print(prob_dict)
 
 print(sort_by_desc('assdddffff'))
