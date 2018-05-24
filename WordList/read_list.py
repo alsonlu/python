@@ -1,4 +1,4 @@
- def string_length_greater_than_20(fin):
+def string_length_greater_than_20(fin):
     for line in fin:
         if len(line) - line.count(' ') > 20:
             print(line)
